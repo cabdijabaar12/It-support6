@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Grid Layout for full page */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #0b132b;
+  color: #fff;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 20px;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.dashboard-btn,
+.logout-btn {
+  background: orange;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+}
+
+.sidebar-menu li {
+  margin: 10px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Top Navigation */
+.topnav {
+  /* grid-area: header; */
+  background: orange;
+  padding: 10px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  
+  
+  
+  
+  
+}
+
+.topnav ul {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 9px;
+  
+}
+
+.topnav li {
+  font-weight:bold;
+  cursor: pointer;
+  
+
+}
+
+/* Main Content */
+.main-content {
+  grid-area: main;
+  padding: 20px;
+}
+
+.recent-activity h2 {
+  color: orange;
+  border-bottom: 3px solid orange;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* Cards Section */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  color: #f90;
+  font-weight: bold;
+}
+
+.card i {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+  grid-area: footer;
+  background: orange;
+  color: #fff;
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  font-size: 14px;
+}
+
+.footer .social-icons span {
+  margin-left: 10px;
+  font-size: 20px;
+}
+  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness Management System</title>
+  <link rel="stylesheet" href="color.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="grid-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="sawir22.jpg" alt="Fitness Logo" />
+      </div>
+      <button class="dashboard-btn">Dashboard</button>
+      <nav class="sidebar-menu">
+        <ul>
+          <li>Registration</li>
+          <li>+ Registration Report</li>
+          <li>Payment</li>
+          <li>+ Payment Report</li>
+          <li>Attendance</li>
+          <li>+ Attendance Report</li>
+        </ul>
+      </nav>
+      <button class="logout-btn">Logout</button>
+    </aside>
+
+    <!-- Top Navigation -->
+    <header class="topnav">
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>Registration</li>
+          <li>Registration Report</li>
+          <li>Payment</li>
+          <li>Payment Report</li>
+          <li>Attendance</li>
+          <li>Attendance Report</li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="recent-activity">
+        <h2>Recent activity</h2>
+        <div class="grid-cards">
+          <div class="card">
+         <i class="fas fa-users"></i>
+            <h3>Customers</h3>
+            <p>+20 Registed</p>
+          </div>
+          <div class="card">
+        <i class="fas fa-male"></i>
+            <h3>Gender</h3>
+            <p>Male</p>
+          </div>
+          <div class="card">
+           <i class="fas fa-female"></i>   
+            <h3>Gender</h3>
+            <p>Female</p>
+          </div>
+          <div class="card">
+        <i class="fas fa-sun"></i>
+            <h3>Morning</h3>
+            <p>shift</p>
+          </div>
+          <div class="card">
+         <i class="fas fa-cloud-sun"></i>
+            <h3>Afternoon</h3>
+            <p>shift</p>
+          </div>
+          <div class="card">
+          <i class="fas fa-moon"></i>
+            <h3>Night</h3>
+            <p>shift</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2021 All copyright is reserved - Fitness management system.</p>
+      <div class="social-icons">
+         <i class="fab fa-facebook"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-twitter"></i>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
